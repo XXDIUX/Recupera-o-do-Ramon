@@ -1,8 +1,10 @@
 class Personagem{
     #vida;
+    #mana;
+    #forca;
 
     constructor(mana, vida, forca){
-    mana = mana,
+    this.mana = mana,
     this.forca = forca,
     this.#vida = vida
    }
@@ -11,7 +13,17 @@ class Personagem{
    }
 
    setvida(novavida) {
-    this.#vida = novavida;
+    this.#vida = novavida < 0 ? 0: novavida;
+   }
+   Atacar(oponente) {
+    if (!(oponente instanceof Personagem)) {
+        console.log("Você só pode atacar outro personagem");
+        return;
+    }
+    const dano = this.força;
+     const vidaAtual = oponente.getvida();
+     oponente.setvida(vidaatual - dano);
+     console.log(`${this.constructor.name} atacou causando ${dano} de dano. Vida do oponente agora é ${oponente}`)
    }
 
    Executarataque(){
