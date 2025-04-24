@@ -1,13 +1,32 @@
 class Personagem{
+    #vida;
+
     constructor(mana, vida, forca){
     mana = mana,
     this.forca = forca,
-    this.vida = vida
+    this.#vida = vida
    }
+   getvida(){
+    return this.#vida;
+   }
+
+   setvida(novavida) {
+    this.#vida = novavida;
+   }
+
    Executarataque(){
     console.log("Ataque surpresa")
    }
-
+   Defesa(){
+    console.log("Parry")
+}
+   Usarmagia(){
+    console.log("Fireball")
+}
+   Atacar(){
+    console.log("Flechada")
+}
+ 
 }
 class Guerreiro extends Personagem{
     constructor(mana, vida, forca){
@@ -31,7 +50,6 @@ class Mago extends Personagem{
     Executarataque(){
         console.log("Bola de fogo")
     }
-
     
 }
  class Arqueiro extends Personagem{
