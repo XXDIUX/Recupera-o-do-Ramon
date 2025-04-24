@@ -1,0 +1,5 @@
+class Personagem {
+    #mana
+    #vida
+    
+}
